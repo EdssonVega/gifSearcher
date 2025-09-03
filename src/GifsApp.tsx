@@ -1,26 +1,16 @@
-import React from "react";
+import { PreviousSearches } from "./gifs/components/PreviousSearches";
+import { CustomHeader } from "./shared/components/CustomHeader";
+import { SearchBar } from "./shared/components/SearchBar";
 
 export const GifsApp = () => {
   return (
     <>
-      <div className="content-center">
-        <h1>Gifs Searcher</h1>
-        <p>Discover and share the perfect gif!</p>
-      </div>
-
-      <div className="search-container">
-        <input type="text" placeholder="Search gifs" />
-        <button>Search</button>
-      </div>
-
-      <div className="previous-searches">
-        <h2>Previous searches</h2>
-        <ul className="previous-searches-list">
-          <li>Dexter</li>
-          <li>Shingeki no kyojin</li>
-          <li>Avatar</li>
-        </ul>
-      </div>
+      <CustomHeader
+        title="Gif searcher"
+        description="Discover and share the perfect Gif!"
+      />
+      <SearchBar placeholder="Search Gif..." />
+      <PreviousSearches previousSearches={["Dexter", "avatar", "The office"]} />
 
       <div className="gifs-container"></div>
     </>

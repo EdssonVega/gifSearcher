@@ -1,4 +1,4 @@
-export interface Giphy {
+export interface GiphyResponse {
   data: Datum[];
   meta: Meta;
   pagination: Pagination;

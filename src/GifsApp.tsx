@@ -4,10 +4,12 @@ import { CustomHeader } from "./shared/components/CustomHeader";
 import { SearchBar } from "./shared/components/SearchBar";
 
 export const GifsApp = () => {
-  const [previousTerms, setPreviousTerms] = useState(["dragonball z"]);
+  const [previousTerms, setPreviousTerms] = useState<string[]>([]);
 
   const handleTermClicked = (term: string) => {
-    console.log(term);
+    if (previousTerms.includes(term)) return;
+    if (setPreviousTerms.length >= 8) return;
+    setPreviousTerms([term, ...previousTerms]);
   };
 
   return (

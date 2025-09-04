@@ -9,7 +9,10 @@ export const SearchBar = ({ placeholder = "Buscar", onQuery }: Props) => {
   const [query, setQuery] = useState("");
 
   const handleSearch = () => {
-    onQuery(query);
+    if (query === "") {
+      return;
+    }
+    onQuery(query.toLowerCase().trim());
     setQuery("");
   };
 
